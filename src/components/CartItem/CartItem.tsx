@@ -1,6 +1,8 @@
 import Button from '@material-ui/core/Button';
+import { useState } from 'react';
 //Types
 import {CartItemType, FrutsQuantities} from '../../App';
+import Details from '../Details/Details';
 //Styles
 import {Wrapper} from './CartItem.styles';
 
@@ -8,11 +10,12 @@ type Props = {
   item: FrutsQuantities;
   addToCart: (clickedItem: FrutsQuantities) => void;
   removeFromCart: (id: number) => void;
+
 }
 
 
 const CartItem: React.FC<Props> = ({item, addToCart, removeFromCart}) => (
-   <Wrapper>
+ <Wrapper>
      <div>
       <h3>{item.name}</h3>
       </div>

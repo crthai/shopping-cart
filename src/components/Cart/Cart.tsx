@@ -4,6 +4,7 @@ import {Wrapper} from './Cart.styles';
 //Types
 import {FrutsQuantities} from '../../App';
 import { Button } from '@material-ui/core';
+import Details from '../Details/Details';
 
 type Props = {
   cartItems: FrutsQuantities[];
@@ -25,6 +26,9 @@ const Cart: React.FC<Props> = ({cartItems, addToCart, removeFromCart, clearCart}
           addToCart={addToCart}
           removeFromCart={removeFromCart}
         />
+      ))}
+      {cartItems.map(item => (
+        <Details item={item} />
       ))}
         <Button size="small"
                 disableElevation

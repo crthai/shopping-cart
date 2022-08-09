@@ -3,13 +3,14 @@ import {useState} from 'react';
 import Fruit from './components/Fruit/Fruit';
 import Cart from '../src/components/Cart/Cart';
 import Drawer from '@material-ui/core/Drawer';
-import { LinearProgress } from '@material-ui/core';
+import { Button, LinearProgress } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import Badge from '@material-ui/core/Badge';
 import Data from '../src/backend/Data';
 //Styles
 import { Wrapper, StyledButton } from './styles';
+import Details from './components/Details/Details';
 //Types
 export type CartItemType = {
   genus: string;
@@ -44,9 +45,18 @@ export type FrutsQuantities = {
 
 const App = () => {
   const [cartOpen, setCartOpen] = useState(false);
+  const [showInfo, setShowInfo] = useState(null);
   const [cartItems, setCartItems] = useState([] as FrutsQuantities[]);
   const { fruits } = Data;
   const getTotalItems = (items: CartItemType[]) => null;
+  
+  const toggleInfo = (id: number) => {
+    if (showInfo === id) {
+      setShowInfo(id);
+    } else {
+      setShowInfo(null);
+    }
+  }
   
   const handleCartClear = () => {
     setCartItems([]);

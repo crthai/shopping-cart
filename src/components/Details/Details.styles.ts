@@ -6,18 +6,10 @@ justify-content: space-between;
 font-family: Arial, Helvetica, sans-serif;
 border-bottom: 1px solid lightblue;
 padding-bottom: 20px;
+font-size: 0.6rem;
 
 
 div{
   flex: 1;
-}
-
-.buttons{
-  display: flex;
-  justify-content: space-between;
-}
-.button-info{
-  background-color: red;
-  justify-content: space-between;
 }
 `;
